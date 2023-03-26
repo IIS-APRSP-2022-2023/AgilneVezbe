@@ -19,7 +19,7 @@ public class CurrencyConversion {
 	}
 
 	public CurrencyConversion(String from, String to, BigDecimal conversionMultiple, String environment,
-			BigDecimal conversionTotal, Double quantity) {
+			Double quantity, BigDecimal conversionTotal) {
 		this.from = from;
 		this.to = to;
 		this.conversionMultiple = conversionMultiple;
