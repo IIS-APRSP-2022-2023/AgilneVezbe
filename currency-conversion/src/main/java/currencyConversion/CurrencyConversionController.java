@@ -70,7 +70,7 @@ public class CurrencyConversionController {
 		try {
 			ResponseEntity<CurrencyConversion> response = proxy.getExchange(from, to);
 			CurrencyConversion responseBody = response.getBody();
-			return ResponseEntity.ok(new CurrencyConversion(from,to,responseBody.getConversionMultiple(),responseBody.getEnvironment(),
+			return ResponseEntity.ok(new CurrencyConversion(from,to,responseBody.getConversionMultiple(),responseBody.getEnvironment()+" feign",
 				quantity, responseBody.getConversionMultiple().multiply(BigDecimal.valueOf(quantity))));
 		}catch(FeignException e) {
 			return ResponseEntity.status(e.status()).body(e.getMessage());
